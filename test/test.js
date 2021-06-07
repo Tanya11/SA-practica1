@@ -1,13 +1,13 @@
 var assert = require('assert')
 const fetch = require("node-fetch")
 
-describe('Prueba de servicio de suma',async function() {
-    it('2 + 2 debaria de ser 4', async function() {
+describe('Pequeño programa de Muestra --Suma de numeros',async function() {
+    it('100 + 100 = 200', async function() {
 
-        let res = await fetch('http://localhost:3000/add/2/2')
+        let res = await fetch('http://localhost:3000/add/100/100')
                     .then(response => response.json())
                     .then(data => { return data })
 
-        assert.equal(res, 4)
+        assert.equal(res, 200)
     })
 })
