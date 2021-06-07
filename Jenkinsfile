@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                nodejs('practica1'){
+                nodejs('NodeSA'){
                     sh 'npm install'
                     sh 'npm start &'
                 }
@@ -14,7 +14,7 @@ pipeline {
         stage('Testeo') {
             steps {
                 echo 'Testeando..'
-                nodejs('practica1'){
+                nodejs('NodeSA'){
                     sh 'npm test'
                 }
             }
