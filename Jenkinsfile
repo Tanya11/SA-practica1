@@ -2,19 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Construir') {
             steps {
-                echo 'Building..'
+                echo 'Construyendo..'
                 nodejs('NodeSA'){
-                    sh 'npm --version'
                     sh 'npm install'
                     sh 'npm start &'
                 }
             }
         }
-        stage('Test') {
+        stage('Prueba') {
             steps {
-                echo 'Testing..'
+                echo 'Probando..'
                 nodejs('NodeSA'){
                     sh 'npm test'
                 }
