@@ -6,20 +6,21 @@ pipeline {
             steps {
                 echo 'Building..'
                 nodejs('NodeSA'){
+                    sh 'npm --version'
                     sh 'npm install'
                     sh 'npm start &'
                 }
             }
         }
-        stage('Testeo') {
+        stage('Test') {
             steps {
-                echo 'Testeando..'
+                echo 'Testing..'
                 nodejs('NodeSA'){
                     sh 'npm test'
                 }
             }
         }
-        stage('Deployment') {
+        stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
